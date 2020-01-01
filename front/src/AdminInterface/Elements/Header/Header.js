@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
 const Header = props => {
-
+    const [sideNav, setSideNav] = useState(0); //0 For Full width, 1 for Min width
+    const toggleNavigation = () => {
+        if (sideNav) {
+            document.body.className = '';
+            document.body.classList.add("skin-blue", "sidebar-mini");
+            setSideNav(0)
+        } else {
+            document.body.className = '';
+            document.body.classList.add("skin-blue", "sidebar-mini", "sidebar-collapse");
+            setSideNav(1)
+        }
+    }
     return (
         <React.Fragment>
             <header className="main-header">
@@ -15,7 +26,7 @@ const Header = props => {
 
                 <nav className="navbar navbar-static-top">
 
-                    <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <a href={void (0)} className="sidebar-toggle" data-toggle="push-menu" role="button" onClick={toggleNavigation}>
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
