@@ -34,19 +34,19 @@ const Leftnav = props => {
 
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">MAIN NAVIGATION</li>
-                        <li className={1 === activeKey ? 'treeview active' : 'treeview'} key="1" onClick={() => handleItemClick(1)}>
+                        <li className={1 === activeKey ? 'treeview menu-open' : 'treeview'} key="1" onClick={() => handleItemClick(1)}>
                             <a href="#">
                                 <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
-                            <ul className="treeview-menu">
+                            <ul className="treeview-menu" style={{ display: 1 === activeKey ? 'block' : 'none' }}>
                                 <li><a href="../../index.html"><i className="fa fa-circle-o"></i> Dashboard v1</a></li>
                                 <li><a href="../../index2.html"><i className="fa fa-circle-o"></i> Dashboard v2</a></li>
                             </ul>
                         </li>
-                        <li className={2 === activeKey ? 'treeview active' : 'treeview'} key="2">
+                        <li className={2 === activeKey ? 'treeview menu-open' : 'treeview'} key="2" onClick={() => handleItemClick(2)}>
                             <a href="#">
                                 <i className="fa fa-files-o"></i>
                                 <span>Layout Options</span>
@@ -54,7 +54,7 @@ const Leftnav = props => {
                                     <span className="label label-primary pull-right">4</span>
                                 </span>
                             </a>
-                            <ul className="treeview-menu">
+                            <ul className="treeview-menu" style={{ display: 2 === activeKey ? 'block' : 'none', transition: "1s" }}>
                                 <li><a href="../layout/top-nav.html"><i className="fa fa-circle-o"></i> Top Navigation</a></li>
                                 <li><a href="../layout/boxed.html"><i className="fa fa-circle-o"></i> Boxed</a></li>
                                 <li><a href="../layout/fixed.html"><i className="fa fa-circle-o"></i> Fixed</a></li>
@@ -62,14 +62,14 @@ const Leftnav = props => {
                             </ul>
                         </li>
 
-                        <li className={3 === activeKey ? 'treeview active' : 'treeview'} key="3">
+                        <li className={3 === activeKey ? 'treeview menu-open' : 'treeview'} key="3" onClick={() => handleItemClick(3)}>
                             <a href="#">
                                 <i className="fa fa-folder"></i> <span>Examples</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
-                            <ul className="treeview-menu">
+                            <ul className="treeview-menu" style={{ display: 3 === activeKey ? 'block' : 'none' }}>
                                 <li><a href="invoice.html"><i className="fa fa-circle-o"></i> Invoice</a></li>
                                 <li><a href="profile.html"><i className="fa fa-circle-o"></i> Profile</a></li>
                                 <li><a href="login.html"><i className="fa fa-circle-o"></i> Login</a></li>
