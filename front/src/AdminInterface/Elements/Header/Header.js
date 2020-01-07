@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import useWindowDimensions from './useWindowDimensions';
 
 const Header = props => {
     const [sideNav, setSideNav] = useState(0); //0 For Full width, 1 for Min width
+    const { height, width } = useWindowDimensions();
+    console.log('Widndow height and width'+ height, width);
     const toggleNavigation = () => {
         if (sideNav) {
             document.body.className = '';
@@ -9,8 +12,14 @@ const Header = props => {
             setSideNav(0)
         } else {
             document.body.className = '';
-            document.body.classList.add("skin-blue", "sidebar-mini", "sidebar-collapse");
-            setSideNav(1)
+            if(width<768){
+                document.body.classList.add("skin-blue", "sidebar-mini", "sidebar-open");
+            }else{
+                document.body.classList.add("skin-blue", "sidebar-mini", "sidebar-collapse");
+                setSideNav(1)
+            }
+            
+            
         }
     }
     return (
